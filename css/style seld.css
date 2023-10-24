@@ -1,0 +1,237 @@
+
+
+/* Обнуление стилей */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+height: 100%;
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+body {
+display: flex;
+flex-direction: column;
+transition: background-image 2s ease;
+background-repeat: no-repeat;
+background-size: cover;
+background-image: url("../imgs/3.jpg");
+}
+
+.logoo {
+    max-width: 500px;
+    max-height: 100px;
+    padding: 5px;
+    position: relative;
+    top: -5px;
+}
+header {
+background-color: #333;
+color: #fff;
+padding: -10px;
+text-align: center;
+max-height: 80px;
+}
+
+
+
+header button {
+color: white;
+text-decoration: none;
+font-size: 25px;
+border: none;
+background: none;
+font-weight: 600;
+font-family: 'Arial';
+position: relative;
+}
+
+header button::before, header button::after {
+content: '';
+width: 0;
+height: 2px;
+background: #f44336;
+display: block;
+transition: 0.5s;
+}
+
+header button:hover::before, header button:hover::after {
+width: 100%;
+}
+
+.content {
+flex: 1;
+padding: 20px;
+text-align: center;
+}
+
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+display: flex;
+justify-content: space-between;
+}
+
+.contact-info, .social-media {
+flex: 1;
+margin: 0 20px;
+}
+
+.social-media {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}   
+.contact-info, .h3, .p {
+    text-align: left;
+}
+
+.social-media ul {
+list-style: none;
+padding: 0;
+}
+
+.social-media ul li {
+display: inline;
+margin: 0 10px;
+}
+
+.social-media a {
+color: #fff;
+text-decoration: none;
+}
+
+.social-media a:hover {
+text-decoration: underline;
+}
+/* Стили для активного пункта меню */
+nav ul li.active {
+background-color: #f44336; /* Цвет фона для активного пункта */
+}
+
+nav ul li.active a {
+color: #fff; /* Цвет текста для активного пункта */
+}
+
+/* Стили для меню */
+nav {
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px;
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+margin: 0 20px;
+}
+
+nav a {
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+.name {
+  color: #fff;
+}
+
+
+/*/ */
+
+
+.chel {
+  position: relative;
+  font-family: sans-serif;
+
+}
+
+.wrapp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* Создать 3 столбца равной ширины */
+    grid-template-rows: repeat(2, 250px); /* Создать 2 строки высотой 100px каждая */
+    margin-top: 50px auto;
+    padding: 30px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.chel .box {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+}
+
+.chel .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+.chel {
+  color: #fff;
+  text-shadow: 4px 6px 4px rgba(0, 0, 0, 0.5);
+}

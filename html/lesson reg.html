@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Голос Мелодии</title>
+<link rel="stylesheet" type="text/css" href="../css/style lesson reg.css">
+<link rel="icon" href="../imgs/fav.png" type="image/x-icon">
+</head>
+<body>
+<header>
+<a href="../index.html"><img class="logoo" src="../imgs/header-logo.png"></a>
+</header>
+
+
+
+<nav>
+<ul>
+<li><a href="../index.html">Главная</a></li>
+<li><a href="../html/about.html">О нас</a></li>
+<li class="active"><a href="../html/lesson reg.html">Запись</a></li>
+<li><a href="../html/autothrise.html">Регистрация</a></li>
+<li><a href="../html/seld.html">Отделения</a></li>
+<li><a href="../html/teachers.html">Преподаватели</a></li>
+<li><a href="../html/rasp.html">Расписание</a></li>
+</ul>
+</nav>
+<div class="content">
+
+
+
+</div>
+<div class="name"><h2 class="name">Запись на занятия</h2></div>
+
+<div class="forms">
+
+    <form class="form">
+  <span class="title">Введиде данные ниже</span>
+ <input id="file" type="file">
+  <label class="avatar" for="file"><span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="#ffffff" d="M17.1813 16.3254L15.3771 14.5213C16.5036 13.5082 17.379 12.9869 18.2001 12.8846C19.0101 12.7837 19.8249 13.0848 20.8482 13.8687C20.8935 13.9034 20.947 13.9202 21 13.9202V15.024C21 19.9452 19.9452 21 15.024 21H8.976C4.05476 21 3 19.9452 3 15.024V13.7522C3.06398 13.7522 3.12796 13.7278 3.17678 13.679L4.45336 12.4024C5.31928 11.5365 6.04969 10.8993 6.71002 10.4791C7.3679 10.0605 7.94297 9.86572 8.50225 9.86572C9.06154 9.86572 9.6366 10.0605 10.2945 10.4791C10.9548 10.8993 11.6852 11.5365 12.5511 12.4024L16.8277 16.679C16.9254 16.7766 17.0836 16.7766 17.1813 16.679C17.2789 16.5813 17.2789 16.423 17.1813 16.3254Z" opacity="0.1"></path> <path stroke-width="2" stroke="#ffffff" d="M3 8.976C3 4.05476 4.05476 3 8.976 3H15.024C19.9452 3 21 4.05476 21 8.976V15.024C21 19.9452 19.9452 21 15.024 21H8.976C4.05476 21 3 19.9452 3 15.024V8.976Z"></path> <path stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M17.0045 16.5022L12.7279 12.2256C9.24808 8.74578 7.75642 8.74578 4.27658 12.2256L3 13.5022"></path> <path stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M21.0002 13.6702C18.907 12.0667 17.478 12.2919 15.1982 14.3459"></path> <path stroke-width="2" stroke="#ffffff" d="M17 8C17 8.55228 16.5523 9 16 9C15.4477 9 15 8.55228 15 8C15 7.44772 15.4477 7 16 7C16.5523 7 17 7.44772 17 8Z"></path> </g></svg></span></label>
+    <input type="text" class="input" placeholder="ФИО">
+    <input type="date" class="input" placeholder="Дата рождения">
+    <input type="text" class="input" placeholder="Логин"> 
+    <input type="email" class="input" placeholder="Почта"> 
+
+    <button>Записаться</button>
+</form>
+    
+</div>
+
+<p style="font-size: 15pt;" class="manager">Наш менеджер свяжется с вами.</p>
+
+<footer>
+<div class="contact-info">
+<h3>Контактная информация</h3>
+<p>Учебное заведение: Музыкальная Школа "Голос Мелодии"</p>
+<p>Телефон: +7 (123) 456-7890</p>
+<p>Адрес: 123 Музыкальная улица, Город: Мелодияград, Почтовый индекс: 56789</p>
+</div>
+<div class="social-media">
+<h3>Социальные сети</h3>
+<ul>
+<li><a href="https://www.vk.com"><img src="../imgs/vk.png" style="width: 40px; height: 40px;"></a></li>
+<li><a href="https://www.telegram.com"><img src="../imgs/tg.png" style="width: 40px; height: 40px;"></a></li>
+<li><a href="https://www.instagram.com"><img src="../imgs/instagram.webp" style="width: 40px; height: 40px;"></a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+            const backgroundImages = [
+    "../imgs/1.jpg",
+    "../imgs/2.jpg",
+    "../imgs/3.jpg",
+    "../imgs/4.jpg",
+];
+
+let currentImageIndex = 0;
+const body = document.body;
+
+// Функция предзагрузки изображений
+function preloadImages(images) {
+    const loadedImages = [];
+    images.forEach(image => {
+        const img = new Image();
+        img.src = image;
+        loadedImages.push(img);
+    });
+    return loadedImages;
+}
+
+// Загрузка начального фонового изображения и запуск смены
+const loadedImages = preloadImages(backgroundImages);
+
+loadedImages[0].onload = function() {
+    body.style.backgroundImage = `url(${backgroundImages[0]})`;
+    
+    function changeBackground() {
+        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+        const nextImage = backgroundImages[currentImageIndex];
+        body.style.backgroundImage = `url(${nextImage})`;
+    }
+
+    setInterval(changeBackground, 5000); // Смена фонового изображения каждые 5 секунд (5000 миллисекунд)
+};
+        </script>
+
+</footer>
+
+
+</body>
+</html>

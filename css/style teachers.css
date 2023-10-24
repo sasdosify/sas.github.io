@@ -1,0 +1,523 @@
+
+
+/* Обнуление стилей */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+height: 100%;
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+body {
+display: flex;
+flex-direction: column;
+transition: background-image 2s ease;
+background-repeat: no-repeat;
+background-size: cover;
+background-image: url("../imgs/3.jpg");
+}
+
+.logoo {
+    max-width: 500px;
+    max-height: 100px;
+    padding: 5px;
+    position: relative;
+    top: -5px;
+}
+header {
+background-color: #333;
+color: #fff;
+padding: -10px;
+text-align: center;
+max-height: 80px;
+}
+
+
+
+header button {
+color: white;
+text-decoration: none;
+font-size: 25px;
+border: none;
+background: none;
+font-weight: 600;
+font-family: 'Arial';
+position: relative;
+}
+
+header button::before, header button::after {
+content: '';
+width: 0;
+height: 2px;
+background: #f44336;
+display: block;
+transition: 0.5s;
+}
+
+header button:hover::before, header button:hover::after {
+width: 100%;
+}
+
+.content {
+flex: 1;
+padding: 20px;
+text-align: center;
+}
+
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+display: flex;
+justify-content: space-between;
+}
+
+.contact-info, .social-media {
+flex: 1;
+margin: 0 20px;
+}
+
+.social-media {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}   
+.contact-info, .h3, .p {
+    text-align: left;
+}
+
+.social-media ul {
+list-style: none;
+padding: 0;
+}
+
+.social-media ul li {
+display: inline;
+margin: 0 10px;
+}
+
+.social-media a {
+color: #fff;
+text-decoration: none;
+}
+
+.social-media a:hover {
+text-decoration: underline;
+}
+/* Стили для активного пункта меню */
+nav ul li.active {
+background-color: #f44336; /* Цвет фона для активного пункта */
+}
+
+nav ul li.active a {
+color: #fff; /* Цвет текста для активного пункта */
+}
+
+/* Стили для меню */
+nav {
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px;
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+margin: 0 20px;
+}
+
+nav a {
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+.name {
+  color: #fff;
+}
+
+
+/*/ */
+
+
+.chel {
+  position: relative;
+  font-family: sans-serif;
+
+}
+
+.wrapp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* Создать 3 столбца равной ширины */
+    grid-template-rows: repeat(2, 250px); /* Создать 2 строки высотой 100px каждая */
+    margin-top: 50px auto;
+    padding: 30px;
+
+}
+
+/*/ */
+
+.chel .box {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Анна.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+.chel {
+  color: #fff;
+
+  text-shadow: 2px 2px 2px #000;
+
+}
+/*/ */
+
+.chel .box1 {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Игорь.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box1 .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box1 div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box1 div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box1 div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box1 div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box1:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+/*/ */
+
+.chel .box2 {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Елена.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box2 .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box2 div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box2 div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box2 div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box2 div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box2:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+/*/ */
+
+.chel .box3 {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Александр.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box3 .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box3 div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box3 div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box3 div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box3 div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box3:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+/*/ */
+
+.chel .box4 {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Виктор.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box4 .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box4 div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box4 div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box4 div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box4 div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box4:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+/*/ */
+
+.chel .box5 {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+  background-image: url('../imgs/Дмитрий.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chel .box5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chel .box5 .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.chel .box5 div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.chel .box5 div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.chel .box5 div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.chel .box5 div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.chel .box5:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+/*/ */
+

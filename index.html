@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Голос Мелодии</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" href="imgs/fav.png" type="image/x-icon">
+</head>
+<body>
+<header>
+
+<a href="index.html"><img class="logoo" src="imgs/header-logo.png"></a>
+</header>
+
+
+
+<nav>
+<ul>
+<li class="active"><a href="index.html">Главная</a></li>
+<li><a href="html/about.html">О нас</a></li>
+<li><a href="html/lesson reg.html">Запись</a></li>
+<li><a href="html/autothrise.html">Регистрация</a></li>
+<li><a href="html/seld.html">Отделения</a></li>
+<li><a href="html/teachers.html">Преподаватели</a></li>
+<li><a href="html/rasp.html">Расписание</a></li>
+</ul>
+</nav>
+<div class="content">
+
+<h2 style="color: #e0dbd7; font-size: 50px;">Музыкальная школа</h2>
+<p style="font-size: 18pt; color: #e0dbd7;">-"Твоя индивидуальность"</p>
+<p style="font-size: 15pt; color: #e0dbd7;">Записаться на бесплатный пробный урок!</p>
+<button class="awe" data-text="Awesome" id="myButton">
+    <span class="actual-text">&nbsp;записаться&nbsp;</span>
+    <span aria-hidden="true" class="hover-text">&nbsp;Записаться!&nbsp;</span>
+</button>
+</div>
+
+<div class="cards">
+<div class="card">
+
+    <div class="data">
+        <p>
+            1250
+            Выпускников 
+        </p>
+        
+        <div class="range">
+            <div class="fill">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+
+    <div class="data">
+        <p>
+            Лучшие
+            предподаватели
+        </p>
+        
+        
+    </div>
+</div>
+
+
+
+</div>
+<footer>
+<div class="contact-info">
+<h3>Контактная информация</h3>
+<p>Учебное заведение: Музыкальная Школа "Голос Мелодии"</p>
+<p>Телефон: +7 (123) 456-7890</p>
+<p>Адрес: 123 Музыкальная улица, Город: Мелодияград, Почтовый индекс: 56789</p>
+</div>
+<div class="social-media">
+<h3>Социальные сети</h3>
+<ul>
+<li><a href="https://www.vk.com"><img src="imgs/vk.png" style="width: 40px; height: 40px;"></a></li>
+<li><a href="https://www.telegram.com"><img src="imgs/tg.png" style="width: 40px; height: 40px;"></a></li>
+<li><a href="https://www.instagram.com"><img src="imgs/instagram.webp" style="width: 40px; height: 40px;"></a></li>
+</ul>
+</div>
+
+        <script type="text/javascript">
+            const backgroundImages = [
+    "imgs/1.jpg",
+    "imgs/2.jpg",
+    "imgs/3.jpg",
+    "imgs/4.jpg",
+];
+
+let currentImageIndex = 0;
+const body = document.body;
+
+// Функция предзагрузки изображений
+function preloadImages(images) {
+    const loadedImages = [];
+    images.forEach(image => {
+        const img = new Image();
+        img.src = image;
+        loadedImages.push(img);
+    });
+    return loadedImages;
+}
+
+// Загрузка начального фонового изображения и запуск смены
+const loadedImages = preloadImages(backgroundImages);
+
+loadedImages[0].onload = function() {
+    body.style.backgroundImage = `url(${backgroundImages[0]})`;
+    
+    function changeBackground() {
+        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+        const nextImage = backgroundImages[currentImageIndex];
+        body.style.backgroundImage = `url(${nextImage})`;
+    }
+
+    setInterval(changeBackground, 5000); // Смена фонового изображения каждые 5 секунд (5000 миллисекунд)
+};
+        </script>
+
+<script>
+        // JavaScript для перехода на другую страницу
+        document.getElementById("myButton").addEventListener("click", function() {
+            // Здесь вы можете указать URL страницы, на которую нужно перейти
+            window.location.href = "html/lesson reg.html";
+        });
+    </script>
+
+</footer>
+</body>
+</html>
