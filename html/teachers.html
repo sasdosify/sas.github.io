@@ -33,7 +33,7 @@
         <span class="title"></span>
         <div>
             <strong>Анна</strong>
-            <p>Мелодиянова</p>
+            <p onclick="redirectToPage('Anna.html')">Мелодиянова</p>
 
         </div>
     </div>
@@ -43,7 +43,7 @@
         <span class="title"></span>
         <div>
             <strong>Игорь</strong>
-            <p>Гармонин</p>
+            <p onclick="redirectToPage('Igor.html')">Гармонин</p>
             
         </div>
     </div>
@@ -53,7 +53,7 @@
         <span class="title"></span>
         <div>
             <strong>Елена</strong>
-            <p>Скрипачкова</p>
+            <p onclick="redirectToPage('Elena.html')">Скрипачкова</p>
             
         </div>
     </div>
@@ -63,7 +63,7 @@
         <span class="title"></span>
         <div>
             <strong>Александр</strong>
-            <p>Ритмов</p>
+            <p onclick="redirectToPage('Alex.html')">Ритмов</p>
         </div>
     </div>
 </div>
@@ -72,7 +72,7 @@
         <span class="title"></span>
         <div>
             <strong>Виктор</strong>
-            <p>Гитарин</p>
+            <p onclick="redirectToPage('Victor.html')">Гитарин</p>
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@
         <span class="title"></span>
         <div>
             <strong>Дмитрий</strong>
-            <p>Барабанов</p>
+            <p onclick="redirectToPage('Dmitriy.html')">Барабанов</p>
         </div>
     </div>
 </div>
@@ -145,6 +145,12 @@ loadedImages[0].onload = function() {
     setInterval(changeBackground, 5000); // Смена фонового изображения каждые 5 секунд (5000 миллисекунд)
 };
         </script>
+
+<script>
+function redirectToPage(url) {
+    window.location.href = url;
+}
+</script>
 
 </footer>
 

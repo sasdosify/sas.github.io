@@ -160,6 +160,27 @@ text-decoration: underline;
   color: #fff;
 }
 
+.text {
+  
+  text-align: center;
+  gap: 10px;
+  border-radius: 15px;
+  font-size: 18pt;
+  color: #fff;
+  font-family: Arial;
+}
+
+.descr {
+  border-radius: 15px;
+  background-color: #333;
+  font-style: italic;
+  width: 80%;
+  height: 93%;
+  justify-content: left;
+  margin-left: -40%;
+  margin-top: 5%;
+}
+
 
 /*/ */
 
@@ -167,20 +188,20 @@ text-decoration: underline;
 .chel {
   position: relative;
   font-family: sans-serif;
-
+  margin-left: 250px;
 }
 
 .wrapp{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 40px;
     display: inline-grid;
-    grid-template-columns: repeat(3, 1fr); /* Создать 3 столбца равной ширины */
-    grid-template-rows: repeat(2, 250px); /* Создать 2 строки высотой 100px каждая */
+    grid-template-columns: repeat(2, 1fr); /* Создать 3 столбца равной ширины */
+    
     margin-top: 50px auto;
-    padding: 30px;
-
+    padding: 8px;
+    margin-left: 10px;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -202,6 +223,10 @@ text-decoration: underline;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-image: url('../imgs/Дмитрий.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 7%;
 }
 
 .chel .box .title {
