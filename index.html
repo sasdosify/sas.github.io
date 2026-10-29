@@ -162,7 +162,13 @@
           <p id="game-rules" class="game-rules"></p>
           <div id="cat-picker" class="cat-picker" aria-label="Выбор котика"></div>
           <div id="action-buttons" class="action-buttons"></div>
-          <div id="game-companions" class="game-companions"></div>
+          <div id="game-companions" class="game-companions">
+            <button id="game-companions-toggle" class="companions-toggle" type="button"
+              aria-expanded="false" aria-controls="game-companions-list">
+              Котики <span id="game-companions-count"></span>
+            </button>
+            <div id="game-companions-list" class="companions-list"></div>
+          </div>
           <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
         </aside>
       </section>

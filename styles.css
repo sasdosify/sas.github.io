@@ -216,7 +216,7 @@ button {
 
 .companions-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   margin-top: 10px;
 }
@@ -535,12 +535,27 @@ button {
 }
 
 .game-companions {
-  max-height: 30%;
-  overflow: auto;
+  min-height: 0;
+}
+
+.companions-toggle {
+  display: none;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 650;
+  text-align: left;
 }
 
 .game-companions .companions-list {
-  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .game-companions .companion-cat-image {
@@ -633,6 +648,10 @@ button {
   color: var(--accent);
   font-size: 12px;
   text-align: center;
+}
+
+.game-screen #feedback:empty {
+  display: none;
 }
 
 .install-hint {
@@ -752,6 +771,32 @@ button {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  .companions-toggle {
+    display: flex;
+  }
+
+  .game-companions .companions-list:not([hidden]) {
+    max-height: min(28dvh, 240px);
+    overflow-y: auto;
+    margin-top: 6px;
+  }
+
+  .action-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) and (orientation: portrait) {
+  .game-shell.meow-mode .board-panel {
+    flex: 0 0 auto;
+  }
+
+  .game-shell.meow-mode .board-frame {
+    width: 100%;
+    flex: 0 0 auto;
+    aspect-ratio: 1;
+  }
 }
 
 @media (max-height: 430px) and (orientation: landscape) {
@@ -792,9 +837,6 @@ button {
     font-size: 12px;
   }
 
-  .game-companions {
-    max-height: 24%;
-  }
 }
 
 @media (max-width: 360px) {

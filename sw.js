@@ -1,4 +1,4 @@
-const CACHE_NAME = "mellowoku-pwa-v6";
+const CACHE_NAME = "mellowoku-pwa-v10";
 const APP_FILES = [
   "./",
   "./index.html",

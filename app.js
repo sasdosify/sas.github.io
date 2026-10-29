@@ -42,6 +42,12 @@
     installButton: document.querySelector("#install-button")
   };
   const boardFrame = document.querySelector(".board-frame");
+  const gameShell = document.querySelector(".game-shell");
+  const gameCompanionsList = document.querySelector("#game-companions-list");
+  const gameCompanionsToggle = document.querySelector("#game-companions-toggle");
+  const gameCompanionsCount = document.querySelector("#game-companions-count");
+  const compactLayout = window.matchMedia("(max-width: 680px)");
+  let gameCompanionsExpanded = !compactLayout.matches;
   const screens = {
     home: document.querySelector("#screen-home"),
     settings: document.querySelector("#screen-settings"),
@@ -514,6 +520,13 @@
     });
   }
 
+  function renderGameCompanions() {
+    renderCompanions(gameCompanionsList);
+    gameCompanionsCount.textContent = `(${state.settings.catBuddies.length})`;
+    gameCompanionsToggle.setAttribute("aria-expanded", String(gameCompanionsExpanded));
+    gameCompanionsList.hidden = compactLayout.matches && !gameCompanionsExpanded;
+  }
+
   function saveSettings() {
     saveState();
     applyTheme();
@@ -552,7 +565,7 @@
       state.settings.catBuddies = state.settings.catBuddies.filter((item) => item.id !== id);
     }
     saveSettings();
-    renderCompanions(document.querySelector("#game-companions"));
+    renderGameCompanions();
   }
 
   function completionPraise() {
@@ -942,6 +955,7 @@
       button.classList.toggle("active", button.dataset.mode === mode);
       button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
     });
+    gameShell.classList.toggle("meow-mode", isMeow);
 
     elements.title.textContent = `Уровень ${isMeow ? game.puzzle.number : game.level.number}`;
     elements.subtitle.textContent = isMeow
@@ -1013,7 +1027,7 @@
 
     renderPicker(game, isMeow, order);
     renderActions(game, isMeow, complete);
-    renderCompanions(document.querySelector("#game-companions"));
+    renderGameCompanions();
     if (complete) {
       elements.feedback.textContent = "Уровень пройден! Можно перейти к следующему.";
     }
@@ -1533,6 +1547,15 @@
       if (button) handleCatAction(button.dataset.catAction, button.dataset.catId);
     });
   });
+  gameCompanionsToggle.addEventListener("click", () => {
+    gameCompanionsExpanded = !gameCompanionsExpanded;
+    renderGameCompanions();
+  });
+  compactLayout.addEventListener("change", (event) => {
+    gameCompanionsExpanded = !event.matches;
+    gameCompanionsList.hidden = event.matches;
+    gameCompanionsToggle.setAttribute("aria-expanded", String(gameCompanionsExpanded));
+  });
   document.querySelector("#cat-form").addEventListener("submit", (event) => {
     event.preventDefault();
     const name = document.querySelector("#cat-name").value.trim();
@@ -1552,7 +1575,7 @@
     catDialog.close();
     catBeingEdited = null;
     saveSettings();
-    renderCompanions(document.querySelector("#game-companions"));
+    renderGameCompanions();
   });
   document.querySelector("#cat-cancel-button").addEventListener("click", () => catDialog.close());
 
