@@ -1,140 +1,205 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Голос Мелодии</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="icon" href="imgs/fav.png" type="image/x-icon">
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#29282d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mellowoku">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./assets/icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Mellowoku — кото-судоку</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Mellowoku — главная">
+        <img src="./assets/mellowoku_logo.png" alt="" width="34" height="34">
+        <span>Mellowoku</span>
+      </a>
+      <div class="top-actions">
+        <button id="back-home-button" class="quiet-button" type="button" hidden>‹ Меню</button>
+        <span id="save-status" role="status">Прогресс сохраняется на устройстве</span>
+        <button id="install-button" class="quiet-button" type="button" hidden>Установить</button>
+      </div>
+    </header>
 
-</head>
-<body>
-<header>
-
-<a href="index.html"><img class="logoo" src="imgs/header-logo.png"></a>
-</header>
-
-
-
-<nav>
-<ul>
-<li class="active"><a href="index.html">Главная</a></li>
-<li><a href="html/about.html">О нас</a></li>
-<li><a href="html/lesson reg.html">Запись</a></li>
-<li><a href="html/autothrise.html">Регистрация</a></li>
-<li><a href="html/seld.html">Отделения</a></li>
-<li><a href="html/teachers.html">Преподаватели</a></li>
-<li><a href="html/rasp.html">Расписание</a></li>
-</ul>
-</nav>
-<div class="content">
-
-<h2 style="color: #e0dbd7; font-size: 50px;">Музыкальная школа</h2>
-<p style="font-size: 18pt; color: #e0dbd7;">-"Твоя индивидуальность"</p>
-<p style="font-size: 15pt; color: #e0dbd7;">Записаться на бесплатный пробный урок!</p>
-<button class="awe" data-text="Awesome" id="myButton">
-    <span class="actual-text">&nbsp;записаться&nbsp;</span>
-    <span aria-hidden="true" class="hover-text">&nbsp;Записаться!&nbsp;</span>
-</button>
-</div>
-<div class="non">
-<div class="cards">
-<div class="card">
-
-    <div class="data">
-        <p>
-            1250
-            Выпускников 
-        </p>
-        
-        <div class="range">
-            <div class="fill">
-            </div>
+    <main id="app-main" class="app-main">
+      <section id="screen-home" class="screen home-screen">
+        <div class="welcome-card">
+          <img src="./assets/mellowoku_logo.png" alt="" class="welcome-logo">
+          <p class="eyebrow">Тихая пауза для ума</p>
+          <h1 id="welcome-title">Привет, котолюб!</h1>
+          <p>Выбери головоломку и устрой котикам уютное приключение.</p>
+          <div class="home-actions">
+            <button id="new-classic-button" class="action-button primary" type="button">Новая игра</button>
+            <button id="continue-classic-button" class="action-button" type="button">Продолжить</button>
+            <button id="new-meow-button" class="action-button" type="button">Новая кото-логика</button>
+            <button id="continue-meow-button" class="action-button" type="button">Продолжить кото-логику</button>
+            <button id="settings-button" class="action-button" type="button">Настройки</button>
+            <button id="history-button" class="action-button" type="button">Пройденные уровни</button>
+          </div>
         </div>
-    </div>
-</div>
-<div class="card">
+        <section class="companions-section home-companions-section">
+          <div class="section-heading">
+            <div>
+              <h2>Твои котики</h2>
+              <p>Переименовывай их, укладывай спать и слушай мурлыканье.</p>
+            </div>
+            <button id="add-cat-button" class="secondary-button" type="button">＋ Добавить котика</button>
+          </div>
+          <div id="home-companions" class="companions-list"></div>
+        </section>
+        <section class="history-panel" aria-label="Пройденные уровни">
+          <h2>Последние победы</h2>
+          <div id="home-history"></div>
+        </section>
+        <div class="home-backup file-actions">
+          <button id="export-button" class="secondary-button" type="button">Скачать прогресс</button>
+          <button id="import-button" class="secondary-button" type="button">Восстановить прогресс</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+      </section>
 
-    <div class="data">
-        <p>
-            Лучшие
-            предподаватели
-        </p>
-        
-        
-    </div>
-</div>
+      <section id="screen-settings" class="screen settings-screen" hidden>
+        <div class="settings-heading">
+          <button class="secondary-button" data-go-home type="button">‹ Меню</button>
+          <div>
+            <h1>Настройки</h1>
+            <p>Имя, оформление, звук и твои котики</p>
+          </div>
+        </div>
+        <section class="settings-group">
+          <h2>Профиль игрока</h2>
+          <label class="field-label" for="player-name">Как тебя зовут?</label>
+          <input id="player-name" class="text-input" type="text" maxlength="24" autocomplete="given-name" placeholder="Твоё имя">
+          <p class="field-help">Имя появится в поздравлениях после победы.</p>
+          <label class="field-label" for="player-gender">Форма поздравления</label>
+          <select id="player-gender" class="select-input">
+            <option value="UNSPECIFIED">Нейтральная</option>
+            <option value="FEMALE">Женская</option>
+            <option value="MALE">Мужская</option>
+          </select>
+        </section>
+        <section class="settings-group">
+          <h2>Цвета и оформление</h2>
+          <label class="field-label" for="theme-mode">Тема</label>
+          <select id="theme-mode" class="select-input">
+            <option value="SYSTEM">Как в системе</option>
+            <option value="LIGHT">Светлая</option>
+            <option value="DARK">Тёмная</option>
+          </select>
+          <label class="field-label" for="color-palette">Палитра</label>
+          <select id="color-palette" class="select-input">
+            <option value="STANDARD">Standard</option>
+            <option value="SOFT_PASTEL">Soft Pastel</option>
+          </select>
+        </section>
+        <section class="settings-group sound-settings">
+          <h2>Музыка и звуки</h2>
+          <label class="setting-toggle">
+            <span>Фоновая музыка</span>
+            <input id="music-enabled" type="checkbox">
+          </label>
+          <label class="range-setting" for="music-volume">
+            <span>Громкость музыки <output id="music-volume-value">55%</output></span>
+            <input id="music-volume" type="range" min="0" max="100" step="1">
+          </label>
+          <p class="field-help">Отдельные мелодии для главного меню и игры.</p>
+          <label class="setting-toggle">
+            <span>Звуки интерфейса и котиков</span>
+            <input id="sounds-enabled" type="checkbox">
+          </label>
+          <label class="range-setting" for="sounds-volume">
+            <span>Громкость звуков <output id="sounds-volume-value">75%</output></span>
+            <input id="sounds-volume" type="range" min="0" max="100" step="1">
+          </label>
+          <p class="field-help">Кнопки, выбор котика, победа, мяуканье и мурлыканье.</p>
+        </section>
+        <section class="settings-group">
+          <div class="section-heading">
+            <div>
+              <h2>Интерактивные котики</h2>
+              <p>Настройки котиков сохраняются на устройстве.</p>
+            </div>
+            <button id="settings-add-cat-button" class="secondary-button" type="button">＋ Добавить</button>
+          </div>
+          <div id="settings-companions" class="companions-list"></div>
+        </section>
+        <section class="settings-group">
+          <h2>Перенос прогресса</h2>
+          <p>Экспортируй файл, чтобы перенести уровни и настройки между устройствами.</p>
+          <div class="file-actions">
+            <button id="settings-export-button" class="secondary-button" type="button">Скачать прогресс</button>
+            <button id="settings-import-button" class="secondary-button" type="button">Восстановить прогресс</button>
+          </div>
+        </section>
+        <p id="settings-feedback" class="feedback" role="status"></p>
+      </section>
 
+      <section id="screen-game" class="screen game-screen" hidden>
+      <nav class="mode-switch" aria-label="Режим игры">
+        <button class="mode-button active" data-mode="classic" type="button">Классическое судоку</button>
+        <button class="mode-button" data-mode="meow" type="button">Кото-логика</button>
+      </nav>
+      <section class="game-shell" aria-label="Игровое поле">
+        <div class="board-panel">
+          <div class="level-info">
+            <div>
+              <h1 id="level-title">Уровень 1</h1>
+              <p id="level-subtitle"></p>
+            </div>
+            <p id="progress-count" class="progress-count"></p>
+          </div>
+          <div class="board-frame">
+            <div id="board" class="board" role="grid" aria-label="Игровое поле"></div>
+          </div>
+        </div>
 
+        <aside class="control-panel">
+          <p id="game-rules" class="game-rules"></p>
+          <div id="cat-picker" class="cat-picker" aria-label="Выбор котика"></div>
+          <div id="action-buttons" class="action-buttons"></div>
+          <div id="game-companions" class="game-companions"></div>
+          <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </aside>
+      </section>
+      </section>
+    </main>
 
-</div>
-<div class="newsss">
-<button class="newss" id="myButton"><a href="html/news.html" style="text-decoration: none; color: #fff;"> # Новости</a>
-</button>
-</div>
-</div>
-<footer>
-<div class="contact-info">
-<h3>Контактная информация</h3>
-<p>Учебное заведение: Музыкальная Школа "Голос Мелодии"</p>
-<p>Телефон: +7 (123) 456-7890</p>
-<p>Адрес: 123 Музыкальная улица, Город: Мелодияград, Почтовый индекс: 56789</p>
-</div>
-<div class="social-media">
-<h3>Социальные сети</h3>
-<ul>
-<li><a href="https://www.vk.com"><img src="imgs/vk.png" style="width: 40px; height: 40px;"></a></li>
-<li><a href="https://www.telegram.com"><img src="imgs/tg.png" style="width: 40px; height: 40px;"></a></li>
-<li><a href="https://www.instagram.com"><img src="imgs/instagram.webp" style="width: 40px; height: 40px;"></a></li>
-</ul>
-</div>
+    <dialog id="victory-dialog" class="app-dialog">
+      <div class="victory-content">
+        <img src="./assets/mellowoku_logo.png" alt="" width="72" height="72">
+        <p class="eyebrow">Муррр, победа!</p>
+        <h2 id="victory-title">Уровень пройден!</h2>
+        <p id="victory-message"></p>
+        <p>Следующая головоломка уже ждёт.</p>
+        <div class="dialog-actions">
+          <button id="victory-next-button" class="action-button primary" type="button">Следующий уровень</button>
+          <button id="victory-home-button" class="secondary-button" type="button">В меню</button>
+        </div>
+      </div>
+    </dialog>
 
-        <script type="text/javascript">
-            const backgroundImages = [
-    "imgs/1.jpg",
-    "imgs/2.jpg",
-    "imgs/3.jpg",
-    "imgs/4.jpg",
-];
+    <dialog id="cat-dialog" class="app-dialog">
+      <form id="cat-form" class="cat-form" method="dialog">
+        <h2 id="cat-dialog-title">Новый котик</h2>
+        <label class="field-label" for="cat-name">Имя котика</label>
+        <input id="cat-name" class="text-input" type="text" maxlength="24" required>
+        <label class="field-label" for="cat-color">Окрас</label>
+        <select id="cat-color" class="select-input">
+          <option value="light">Светлый</option>
+          <option value="gray">Серый</option>
+        </select>
+        <div class="dialog-actions">
+          <button id="cat-save-button" class="action-button primary" type="submit">Сохранить</button>
+          <button id="cat-cancel-button" class="secondary-button" type="button">Отмена</button>
+        </div>
+      </form>
+    </dialog>
 
-let currentImageIndex = 0;
-const body = document.body;
-
-// Функция предзагрузки изображений
-function preloadImages(images) {
-    const loadedImages = [];
-    images.forEach(image => {
-        const img = new Image();
-        img.src = image;
-        loadedImages.push(img);
-    });
-    return loadedImages;
-}
-
-// Загрузка начального фонового изображения и запуск смены
-const loadedImages = preloadImages(backgroundImages);
-
-loadedImages[0].onload = function() {
-    body.style.backgroundImage = `url(${backgroundImages[0]})`;
-    
-    function changeBackground() {
-        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-        const nextImage = backgroundImages[currentImageIndex];
-        body.style.backgroundImage = `url(${nextImage})`;
-    }
-
-    setInterval(changeBackground, 5000); // Смена фонового изображения каждые 5 секунд (5000 миллисекунд)
-};
-        </script>
-
-<script>
-        // JavaScript для перехода на другую страницу
-        document.getElementById("myButton").addEventListener("click", function() {
-            // Здесь вы можете указать URL страницы, на которую нужно перейти
-            window.location.href = "html/lesson reg.html";
-        });
-    </script>
-
-</footer>
-</body>
+    <script src="./app.js" defer></script>
+  </body>
 </html>
