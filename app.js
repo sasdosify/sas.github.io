@@ -654,8 +654,7 @@
 
   function classicSize(level) {
     if (level <= 4) return { order: 4, boxRows: 2, boxColumns: 2 };
-    if (level <= 12) return { order: 6, boxRows: 2, boxColumns: 3 };
-    return { order: 9, boxRows: 3, boxColumns: 3 };
+    return { order: 6, boxRows: 2, boxColumns: 3 };
   }
 
   function makeSolvedSudoku(size) {
